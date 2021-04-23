@@ -12,11 +12,37 @@ export const GlobalStyle = createGlobalStyle`
         margin : 0 ;
         padding : 0 20px ;
         display flex ;
-        justyfy-content : center
+        justify-content : center
     }
 
     * {
         box-sizing : border-box;
         font-family : "Catamaran" , sans-sarif
     }
+    .button {
+        display: block;
+        background-color: #bbb;
+      }
+      button {
+        width: 25%;
+        height: 60px;
+        font-size: 30px;
+      }
+      .result {
+        height: 60px;
+        background-color: #bbb;
+        width: 100%;
+      }
+      
+      .result p {
+        font-size: 40px;
+        margin: 5px;
+      
+      }
+      
+      .calculator-body {
+        max-width: 400px;
+        margin: auto;
+      }
 `
+
