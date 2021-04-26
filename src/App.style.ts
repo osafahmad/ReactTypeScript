@@ -23,11 +23,13 @@ export const GlobalStyle = createGlobalStyle`
         display: block;
         background-color: #bbb;
       }
-      button {
+      .calbutton {
         width: 25%;
         height: 60px;
         font-size: 30px;
       }
+      
+     
       .result {
         height: 60px;
         background-color: #bbb;

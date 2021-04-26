@@ -61,8 +61,9 @@ const  Home = (props: any) =>{
       }
   }
   const handleNavigate = (e : React.MouseEvent<HTMLButtonElement>)=>{
-    props.history.push("calculator");
-    console.log("Prop",props);
+    const routeName = e.currentTarget.name
+    props.history.push(routeName);
+    console.log("Prop",routeName);
   }
   return (
     <>
@@ -98,8 +99,11 @@ const  Home = (props: any) =>{
         Next Question
       </button>
     }
-      <button className="next" onClick={handleNavigate}>
+      <button name={"calculator"} className="next" onClick={handleNavigate}>
           Go On Calculator
+      </button>
+      <button name={"topics"} className="next" onClick={handleNavigate}>
+          Topics
       </button>
     </div>
     </>
