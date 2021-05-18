@@ -1,7 +1,7 @@
 import React ,{useState}from 'react';
-import QuestionCard from "./components/QuestionCard"
-import { fetchQuizQuestions , Difficulty ,QuestionState} from "./Api";
-import {GlobalStyle} from "./App.style"
+import QuestionCard from "../../components/QuestionCard"
+import { fetchQuizQuestions , Difficulty ,QuestionState} from "../../apis/Api";
+import {GlobalStyle} from "../../App.style"
 
 const TOTAL_QUESTIONS = 10;
 export type AnswerObject = {
@@ -11,7 +11,7 @@ export type AnswerObject = {
   correctAnswer:string
 }
 
-const  App = () =>{
+const  Home = (props: any) =>{
   const [loading , setLoading] = useState(false);
   const [questions , setQuestions] = useState<QuestionState[]>([]);
   const [number , setNumber] = useState(0);
@@ -60,10 +60,14 @@ const  App = () =>{
           setUserAnswers((prev) => [...prev,answerObject])
       }
   }
-  console.log("Answer",questions);
+  const handleNavigate = (e : React.MouseEvent<HTMLButtonElement>)=>{
+    const routeName = e.currentTarget.name
+    props.history.push(routeName);
+    console.log("Prop",routeName);
+  }
   return (
     <>
-    <GlobalStyle />
+    
     <div className="App">
       <h1> React Quiz</h1>
       {
@@ -95,10 +99,15 @@ const  App = () =>{
         Next Question
       </button>
     }
-      
+      <button name={"calculator"} className="next" onClick={handleNavigate}>
+          Go On Calculator
+      </button>
+      <button name={"topics"} className="next" onClick={handleNavigate}>
+          Topics
+      </button>
     </div>
     </>
   );
 }
 
-export default App;
+export default Home;

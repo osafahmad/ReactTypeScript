@@ -1,5 +1,5 @@
 
-import {shuffelArray} from "./utils"
+import {shuffelArray} from "../utils"
 
 export type  Question = {
     category : string;
